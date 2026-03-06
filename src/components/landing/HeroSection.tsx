@@ -2,48 +2,57 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-secondary overflow-hidden">
-      {/* Geometric pattern background */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-10 w-64 h-64 border border-primary/30 rotate-45" />
-        <div className="absolute bottom-20 right-10 w-48 h-48 border border-accent/30 rotate-12" />
-        <div className="absolute top-1/3 right-1/4 w-32 h-32 border border-primary/20 -rotate-12" />
-        <div className="absolute bottom-1/3 left-1/4 w-40 h-40 border border-accent/20 rotate-45" />
-      </div>
+    <section className="relative min-h-screen flex items-center justify-center bg-background overflow-hidden">
+      {/* Gradient glow */}
+      <div className="absolute inset-0 gradient-bg-subtle" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[100px]" />
+
+      {/* Grid pattern */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: 'linear-gradient(hsl(265 80% 60%) 1px, transparent 1px), linear-gradient(90deg, hsl(265 80% 60%) 1px, transparent 1px)',
+        backgroundSize: '60px 60px'
+      }} />
 
       <div className="relative z-10 max-w-[900px] mx-auto px-5 py-20 text-center">
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-[2rem] md:text-[2.8rem] lg:text-[3.2rem] font-bold leading-tight text-secondary-foreground mb-6"
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="text-[1.8rem] md:text-[2.5rem] lg:text-[3rem] font-bold leading-[1.15] text-foreground mb-8"
         >
-          Transforme seu Instagram em uma{" "}
-          <span className="text-primary">Máquina de Vendas</span> utilizando o
-          meu MCC em 30 dias
+          Cresça de 5 a 10 mil seguidores qualificados por mês e transforme o seu Instagram em uma máquina de{" "}
+          <span className="text-gradient">engajamento, autoridade e vendas</span>{" "}
+          com o MCC.
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg md:text-xl text-accent mb-10 max-w-[700px] mx-auto"
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-lg md:text-xl text-muted-foreground mb-10 max-w-[700px] mx-auto"
         >
           O método que 127+ criadores e empresários usaram para virar referência
           no mercado country
         </motion.p>
 
-        <motion.a
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4, delay: 0.4 }}
-          href="https://hotm.art/7GmUn4q"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-primary text-primary-foreground font-bold text-lg px-10 py-4 rounded-lg hover:bg-primary/85 hover:scale-105 hover:shadow-xl transition-all duration-200"
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2"
         >
-          Garantir Minha Vaga Agora
-        </motion.a>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="w-8 h-8 rounded-full border-2 border-primary/50 flex items-center justify-center"
+          >
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-primary">
+              <path d="M7 2v10m0 0l4-4m-4 4L3 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

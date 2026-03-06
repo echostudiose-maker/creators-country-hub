@@ -29,17 +29,20 @@ const deliverables = [
 ];
 
 const DeliverablesSection = () => (
-  <section className="py-16 md:py-20 bg-background">
-    <div className="max-w-[900px] mx-auto px-5">
+  <section className="py-20 md:py-28 bg-secondary relative">
+    <div className="absolute inset-0">
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px]" />
+    </div>
+    <div className="relative max-w-[800px] mx-auto px-5">
       <motion.h2
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-2xl md:text-3xl font-bold text-foreground text-center mb-12"
+        className="text-2xl md:text-4xl font-bold text-foreground text-center mb-14"
       >
         O Que Você Recebe
       </motion.h2>
-      <div className="space-y-8">
+      <div className="space-y-6">
         {deliverables.map((d, i) => (
           <motion.div
             key={i}
@@ -47,17 +50,18 @@ const DeliverablesSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
-            className="flex gap-5"
+            className="flex gap-5 group"
           >
-            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
+            <div className="flex-shrink-0 w-11 h-11 rounded-xl gradient-purple flex items-center justify-center font-bold text-lg text-primary-foreground">
               {d.num}
             </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground mb-2">{d.title}</h3>
-              <ul className="space-y-1">
+            <div className="border-b border-border/50 pb-6 flex-1">
+              <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-gradient transition-colors">{d.title}</h3>
+              <ul className="space-y-1.5">
                 {d.items.map((item, j) => (
-                  <li key={j} className="text-muted-foreground text-sm leading-relaxed">
-                    • {item}
+                  <li key={j} className="text-muted-foreground text-sm leading-relaxed flex items-start gap-2">
+                    <span className="text-primary/60 mt-1">•</span>
+                    {item}
                   </li>
                 ))}
               </ul>

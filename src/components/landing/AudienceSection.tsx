@@ -8,17 +8,18 @@ const audiences = [
 ];
 
 const AudienceSection = () => (
-  <section className="py-16 md:py-20 bg-muted">
-    <div className="max-w-[900px] mx-auto px-5">
+  <section className="py-20 md:py-28 bg-background relative">
+    <div className="absolute inset-0 gradient-bg-subtle opacity-50" />
+    <div className="relative max-w-[900px] mx-auto px-5">
       <motion.h2
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-2xl md:text-3xl font-bold text-foreground text-center mb-12"
+        className="text-2xl md:text-4xl font-bold text-foreground text-center mb-14"
       >
         Pra Quem É o Creators Country?
       </motion.h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {audiences.map((a, i) => (
           <motion.div
             key={i}
@@ -26,10 +27,10 @@ const AudienceSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
-            className="bg-card border-2 border-primary/30 rounded-lg p-6 text-center hover-lift"
+            className="rounded-xl p-6 text-center border border-border bg-card/50 backdrop-blur-sm hover:border-primary/40 transition-all duration-300 hover-lift"
           >
-            <div className="text-[2.5rem] mb-3">{a.emoji}</div>
-            <h3 className="text-lg font-bold text-primary mb-2">{a.title}</h3>
+            <div className="text-[2.5rem] mb-4">{a.emoji}</div>
+            <h3 className="text-lg font-bold text-gradient mb-2">{a.title}</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">{a.desc}</p>
           </motion.div>
         ))}

@@ -11,17 +11,18 @@ const pillars = [
 ];
 
 const SolutionSection = () => (
-  <section className="py-16 md:py-20 bg-secondary">
-    <div className="max-w-[900px] mx-auto px-5">
+  <section className="py-20 md:py-28 bg-background relative">
+    <div className="absolute inset-0 gradient-bg-subtle" />
+    <div className="relative max-w-[900px] mx-auto px-5">
       <motion.h2
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-2xl md:text-3xl font-bold text-secondary-foreground text-center mb-12"
+        className="text-2xl md:text-4xl font-bold text-foreground text-center mb-14"
       >
         O Que Você Vai Conquistar
       </motion.h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {pillars.map((p, i) => (
           <motion.div
             key={i}
@@ -29,13 +30,15 @@ const SolutionSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
-            className="bg-secondary/80 border border-secondary-foreground/10 rounded-lg p-6 hover:scale-[1.03] transition-transform duration-200"
+            className="group rounded-xl p-6 border border-border bg-card/50 backdrop-blur-sm hover:border-primary/40 hover:glow-purple transition-all duration-300"
           >
-            <div className="flex items-center gap-2 mb-3">
-              <Check className="w-5 h-5 text-accent flex-shrink-0" />
-              <h3 className="text-lg font-bold text-secondary-foreground">{p.title}</h3>
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-8 h-8 rounded-lg gradient-purple flex items-center justify-center flex-shrink-0">
+                <Check className="w-4 h-4 text-primary-foreground" />
+              </div>
+              <h3 className="text-lg font-bold text-foreground">{p.title}</h3>
             </div>
-            <p className="text-secondary-foreground/70 leading-relaxed text-sm">{p.desc}</p>
+            <p className="text-muted-foreground leading-relaxed text-sm">{p.desc}</p>
           </motion.div>
         ))}
       </div>

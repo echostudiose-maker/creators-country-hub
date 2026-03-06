@@ -9,18 +9,20 @@ const items = [
 ];
 
 const ValueAnchorSection = () => (
-  <section className="py-16 md:py-20 bg-background">
-    <div className="max-w-[900px] mx-auto px-5">
+  <section className="py-20 md:py-28 bg-secondary relative">
+    <div className="absolute inset-0">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/5 rounded-full blur-[120px]" />
+    </div>
+    <div className="relative max-w-[900px] mx-auto px-5">
       <motion.h2
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-2xl md:text-3xl font-bold text-foreground text-center mb-12"
+        className="text-2xl md:text-4xl font-bold text-foreground text-center mb-14"
       >
         Quanto Custaria Tudo Isso Separado?
       </motion.h2>
       <div className="flex flex-col lg:flex-row gap-8 items-center">
-        {/* Left: individual items */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -28,29 +30,27 @@ const ValueAnchorSection = () => (
           className="flex-1 space-y-3 w-full"
         >
           {items.map((item, i) => (
-            <div key={i} className="flex justify-between items-center bg-muted rounded-lg p-4">
-              <span className="text-foreground text-sm">{item.label}</span>
+            <div key={i} className="flex justify-between items-center rounded-xl p-4 border border-border bg-card/30">
+              <span className="text-foreground/80 text-sm">{item.label}</span>
               <span className="text-muted-foreground line-through font-semibold">{item.price}</span>
             </div>
           ))}
-          <div className="flex justify-between items-center bg-muted rounded-lg p-4 border-2 border-border">
+          <div className="flex justify-between items-center rounded-xl p-4 border-2 border-border bg-card/50">
             <span className="font-bold text-foreground">TOTAL SEPARADO</span>
             <span className="font-bold text-foreground text-xl line-through">R$ 5.300+</span>
           </div>
         </motion.div>
 
-        {/* Arrow */}
-        <div className="text-3xl text-accent font-bold hidden lg:block">→</div>
-        <div className="text-3xl text-accent font-bold lg:hidden">↓</div>
+        <div className="text-3xl text-primary font-bold hidden lg:block">→</div>
+        <div className="text-3xl text-primary font-bold lg:hidden">↓</div>
 
-        {/* Right: the deal */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           className="flex-1 w-full"
         >
-          <div className="bg-success/10 border-2 border-success rounded-lg p-8 text-center">
+          <div className="rounded-xl p-8 text-center border-2 border-success/50 bg-success/5 glow-purple" style={{ boxShadow: '0 0 60px -12px hsl(145 63% 49% / 0.2)' }}>
             <p className="text-success font-bold text-sm uppercase tracking-wider mb-2">
               ✅ Tudo junto na Creators Country
             </p>

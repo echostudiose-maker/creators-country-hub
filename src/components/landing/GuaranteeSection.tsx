@@ -11,17 +11,20 @@ const guarantees = [
 ];
 
 const GuaranteeSection = () => (
-  <section className="py-16 md:py-20 bg-background">
-    <div className="max-w-[900px] mx-auto px-5">
+  <section className="py-20 md:py-28 bg-secondary relative">
+    <div className="absolute inset-0">
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-success/5 rounded-full blur-[100px]" />
+    </div>
+    <div className="relative max-w-[900px] mx-auto px-5">
       <motion.h2
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-2xl md:text-3xl font-bold text-foreground text-center mb-12"
+        className="text-2xl md:text-4xl font-bold text-foreground text-center mb-14"
       >
         Sua Segurança é Prioridade
       </motion.h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {guarantees.map((g, i) => (
           <motion.div
             key={i}
@@ -29,10 +32,12 @@ const GuaranteeSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.08 }}
-            className="bg-card border-l-4 border-l-success rounded-lg p-6 shadow-sm hover:bg-muted/50 transition-colors"
+            className="rounded-xl p-6 border border-success/20 bg-card/30 hover:border-success/40 transition-all duration-300"
           >
-            <div className="flex items-center gap-2 mb-2">
-              <Check className="w-5 h-5 text-success flex-shrink-0" />
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-6 h-6 rounded-full bg-success/20 flex items-center justify-center flex-shrink-0">
+                <Check className="w-3.5 h-3.5 text-success" />
+              </div>
               <h3 className="font-bold text-foreground">{g.title}</h3>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">{g.desc}</p>

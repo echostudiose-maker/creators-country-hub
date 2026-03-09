@@ -1,3 +1,4 @@
+import NavBar from "@/components/NavBar";
 import HeroSection from "@/components/landing/HeroSection";
 import SocialProofSection from "@/components/landing/SocialProofSection";
 import PainSection from "@/components/landing/PainSection";
@@ -15,6 +16,7 @@ import FooterSection from "@/components/landing/FooterSection";
 const Index = () => {
   return (
     <main>
+      <NavBar />
       <HeroSection />
       <SocialProofSection />
       <PainSection />

@@ -2,44 +2,49 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 const pillars = [
-  { title: "Posicionamento", desc: "Você sabe exatamente quem é, qual é seu diferencial e por que o seu público DEVE te seguir e comprar de você." },
-  { title: "Copy que Vende", desc: "Cada post, story e comentário convertem. Você domina a psicologia por trás das palavras que vendem." },
-  { title: "Máquina de Conteúdo", desc: "Nunca mais fica travado. Ideias infinitas, legendas prontas, estratégia clara. Só gravar e postar." },
-  { title: "Parcerias que Vendem", desc: "Acesso a uma comunidade onde marcas e criadores se conectam para fechar deals reais que geram lucro." },
-  { title: "Mentor ao Seu Lado", desc: "Mentorias ao vivo toda semana. Você não fica sozinho. Eu estou aqui pra corrigir o rumo quando precisa." },
-  { title: "IA Especializada", desc: "Um agente de IA que entende seu nicho e gera ideias, roteiros e legendas em segundos." },
+  { title: "Posicionamento", desc: "Você define linguagem, diferenciação e promessa que seu público entende em segundos." },
+  { title: "Copy que converte", desc: "Cada vídeo, story e legenda passa a gerar ação: comentário, DM e venda." },
+  { title: "Conteúdo escalável", desc: "Sistema com pauta recorrente para nunca mais depender de ideia aleatória." },
+  { title: "Parcerias estratégicas", desc: "Conexões com empresários e criadores para gerar negócios reais." },
+  { title: "Mentoria semanal", desc: "Ajuste de rota ao vivo para acelerar resultado e evitar erros caros." },
+  { title: "IA especializada", desc: "Roteiros, ganchos e legendas com contexto do seu nicho em segundos." },
 ];
 
 const SolutionSection = () => (
-  <section className="py-16 md:py-28 bg-background relative">
-    <div className="absolute inset-0 gradient-bg-subtle" />
-    <div className="relative max-w-[900px] mx-auto px-5">
+  <section id="solution" className="section-light py-16 md:py-24 border-t border-section-light-text/10">
+    <div className="max-w-6xl mx-auto px-6 md:px-10">
+      <motion.p className="label-caps text-section-light-text/45 mb-4" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
+        Services
+      </motion.p>
       <motion.h2
-        initial={{ opacity: 0, y: 20 }}
+        className="font-body font-semibold text-[clamp(2.2rem,7vw,4.8rem)] text-section-light-text leading-[0.95] mb-10 md:mb-14"
+        initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-2xl md:text-4xl font-bold text-foreground text-center mb-10 md:mb-14"
       >
-        O Que Você Vai Conquistar
+        Como vamos
+        <br />
+        acelerar seu
+        <br />
+        <span className="headline-serif-italic">crescimento</span>
       </motion.h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {pillars.map((p, i) => (
-          <motion.div
+          <motion.article
             key={i}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.1 }}
-            className="group rounded-xl p-5 md:p-6 border border-border bg-card/50 backdrop-blur-sm hover:border-primary/40 transition-all duration-300"
+            transition={{ delay: i * 0.08 }}
+            className="rounded-2xl border border-section-light-text/10 p-6 bg-background/20"
           >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0">
-                <Check className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary-foreground" />
-              </div>
-              <h3 className="text-base md:text-lg font-bold text-foreground">{p.title}</h3>
+            <div className="w-8 h-8 rounded-lg bg-section-light-text text-section-light flex items-center justify-center mb-4">
+              <Check className="w-4 h-4" />
             </div>
-            <p className="text-muted-foreground leading-relaxed text-sm">{p.desc}</p>
-          </motion.div>
+            <h3 className="font-body font-semibold text-section-light-text text-xl mb-2">{p.title}</h3>
+            <p className="font-body text-section-light-text/60 leading-[1.65]">{p.desc}</p>
+          </motion.article>
         ))}
       </div>
     </div>

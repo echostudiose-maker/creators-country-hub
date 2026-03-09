@@ -1,58 +1,41 @@
 import { motion } from "framer-motion";
 
 const audiences = [
-  { emoji: "🎬", title: "Criador de Conteúdo", desc: "Quer transformar seu Instagram em fonte de renda consistente, fechar parcerias e virar referência no seu nicho." },
-  { emoji: "💼", title: "Empresário / Dono de Negócio", desc: "Precisa dominar o Instagram para vender seus produtos ou serviços e conectar com influenciadores certos." },
-  { emoji: "🌟", title: "Influenciador / Artista", desc: "Quer ampliar seu alcance, monetizar melhor sua audiência e fechar parcerias com marcas maiores." },
-  { emoji: "🚀", title: "Empreendedor Digital", desc: "Busca uma estratégia completa para crescer do zero e gerar receita consistente via Instagram." },
+  { emoji: "🎬", title: "Criador de Conteúdo", desc: "Transformar seu perfil em fonte de renda e autoridade no nicho." },
+  { emoji: "💼", title: "Empresário", desc: "Vender via Instagram conectando com influenciadores certos." },
+  { emoji: "🌟", title: "Influenciador / Artista", desc: "Monetizar melhor sua audiência e fechar parcerias grandes." },
+  { emoji: "🚀", title: "Empreendedor Digital", desc: "Estratégia para crescer do zero e gerar receita consistente." },
 ];
 
 const AudienceSection = () => (
-  <section className="section-dark py-16 md:py-32 relative overflow-hidden">
-    <div className="absolute inset-0 gradient-bg-subtle opacity-40 pointer-events-none" />
+  <section className="section-light py-16 md:py-24 border-t border-section-light-text/10">
+    <div className="max-w-6xl mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-10 md:gap-20">
+      <div>
+        <p className="label-caps text-section-light-text/45 mb-4">Para quem é</p>
+        <h2 className="font-body font-semibold text-[clamp(2.2rem,7vw,4.8rem)] text-section-light-text leading-[0.95]">
+          Criadores e
+          <br />
+          empresários
+          <br />
+          <span className="headline-serif-italic">do country</span>
+        </h2>
+      </div>
 
-    <div className="relative max-w-5xl mx-auto px-5 md:px-10">
-      <div className="grid md:grid-cols-2 gap-10 md:gap-20 items-start">
-        {/* Left */}
-        <div>
-          <motion.p
-            className="label-caps text-accent mb-4 md:mb-5"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            Para quem é
-          </motion.p>
-          <motion.h2
-            className="headline-editorial text-[clamp(2.5rem,8vw,4.5rem)] text-foreground leading-[0.92]"
-            initial={{ opacity: 0, y: 40 }}
+      <div className="grid grid-cols-2 gap-3 md:gap-4">
+        {audiences.map((a, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+            transition={{ delay: i * 0.1 }}
+            className="rounded-2xl border border-section-light-text/10 p-5 text-center"
           >
-            Pra quem é o
-            <br />
-            <span className="headline-serif-italic text-gradient">Creators Country?</span>
-          </motion.h2>
-        </div>
-
-        {/* Right: 2-col grid even on mobile */}
-        <div className="grid grid-cols-2 gap-3 md:gap-4">
-          {audiences.map((a, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
-              className="p-4 md:p-6 rounded-lg border border-border/60 bg-card/40 hover:border-primary/30 transition-all duration-300 card-glow text-center"
-            >
-              <div className="text-2xl md:text-3xl mb-2 md:mb-4">{a.emoji}</div>
-              <h3 className="font-display font-bold text-sm md:text-base text-foreground mb-1 md:mb-2">{a.title}</h3>
-              <p className="font-body text-[0.7rem] md:text-xs text-muted-foreground leading-[1.6] md:leading-[1.7]">{a.desc}</p>
-            </motion.div>
-          ))}
-        </div>
+            <span className="text-3xl">{a.emoji}</span>
+            <h3 className="font-body font-semibold text-section-light-text mt-2">{a.title}</h3>
+            <p className="font-body text-section-light-text/55 text-sm mt-1 leading-snug">{a.desc}</p>
+          </motion.div>
+        ))}
       </div>
     </div>
   </section>

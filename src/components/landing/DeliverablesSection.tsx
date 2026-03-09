@@ -2,65 +2,68 @@ import { motion } from "framer-motion";
 
 const deliverables = [
   {
-    num: 1,
-    title: "Rota 66 para Instagram (40+ Aulas)",
-    items: ["Módulo 1: Posicionamento e Marca Pessoal", "Módulo 2: Copy e Gatilhos Psicológicos", "Módulo 3: Funil de Conteúdo", "Módulo 4: Parcerias e Negociações"],
+    num: "01",
+    title: "Rota 66 — Curso completo (40+ aulas)",
+    items: ["Posicionamento e marca", "Copy e gatilhos", "Funil de conteúdo", "Parcerias e negociação"],
   },
   {
-    num: 2,
-    title: "Mentorias Semanais Ao Vivo",
-    items: ["Eu estou em chamada ao vivo com você. Você traz suas dúvidas, eu ajudo.", "Todas as quartas-feiras", "Gravadas para assistir depois"],
+    num: "02",
+    title: "Mentorias semanais ao vivo",
+    items: ["Toda quarta com análise de perfil", "Correção de rota imediata", "Gravadas para rever depois"],
   },
   {
-    num: 3,
-    title: "Comunidade Exclusiva (Criadores + Empresários)",
-    items: ["Um espaço fechado onde criadores conhecem empresários de verdade.", "Networking que gera lucro"],
+    num: "03",
+    title: "Comunidade exclusiva",
+    items: ["Criadores + Empresários do mercado country", "Networking que gera negócios reais"],
   },
   {
-    num: 4,
-    title: "BahGPT (IA Especializada no Seu Nicho)",
-    items: ["Você pede: 'Preciso de 5 ideias de posts para segunda' e recebe prontas em segundos.", "Legendas, roteiros, tudo mastigadinho"],
+    num: "04",
+    title: "BahGPT — IA de conteúdo",
+    items: ["Roteiros em segundos", "Legendas e ganchos prontos"],
   },
   {
-    num: 5,
-    title: "O Pódio (Masterclasses com Especialistas)",
-    items: ["Aulas gravadas com pessoas que já conquistaram o sucesso", "Você aprende com quem realmente vive isso"],
+    num: "05",
+    title: "O Pódio — Masterclasses",
+    items: ["Convidados que já alcançaram o sucesso", "Casos reais do mercado"],
   },
 ];
 
 const DeliverablesSection = () => (
-  <section className="py-16 md:py-28 bg-secondary relative">
-    <div className="absolute inset-0">
-      <div className="absolute bottom-0 right-0 w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-primary/5 rounded-full blur-[100px]" />
-    </div>
-    <div className="relative max-w-[800px] mx-auto px-5">
+  <section id="deliverables" className="section-light py-16 md:py-24 border-t border-section-light-text/10">
+    <div className="max-w-6xl mx-auto px-6 md:px-10">
+      <motion.p className="label-caps text-section-light-text/45 mb-4" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
+        Entregáveis
+      </motion.p>
       <motion.h2
-        initial={{ opacity: 0, y: 20 }}
+        className="font-body font-semibold text-[clamp(2.2rem,7vw,4.8rem)] text-section-light-text leading-[0.95] mb-10 md:mb-14"
+        initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-2xl md:text-4xl font-bold text-foreground text-center mb-10 md:mb-14"
       >
-        O Que Você Recebe
+        O que você
+        <br />
+        <span className="headline-serif-italic">recebe</span>
       </motion.h2>
-      <div className="space-y-5 md:space-y-6">
+
+      <div className="space-y-4">
         {deliverables.map((d, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.1 }}
-            className="flex gap-4 md:gap-5 group"
+            transition={{ delay: i * 0.08 }}
+            className="rounded-2xl border border-section-light-text/10 p-6 flex flex-col sm:flex-row gap-4"
           >
-            <div className="flex-shrink-0 w-10 h-10 md:w-11 md:h-11 rounded-xl gradient-primary flex items-center justify-center font-bold text-base md:text-lg text-primary-foreground">
+            <div className="w-12 h-12 rounded-xl bg-section-light-text text-section-light flex items-center justify-center font-body font-semibold text-lg shrink-0">
               {d.num}
             </div>
-            <div className="border-b border-border/50 pb-5 md:pb-6 flex-1">
-              <h3 className="text-base md:text-lg font-bold text-foreground mb-2">{d.title}</h3>
+            <div className="flex-1">
+              <h3 className="font-body font-semibold text-section-light-text text-xl mb-2">{d.title}</h3>
               <ul className="space-y-1.5">
                 {d.items.map((item, j) => (
-                  <li key={j} className="text-muted-foreground text-sm leading-relaxed flex items-start gap-2">
-                    <span className="text-primary/60 mt-1 shrink-0">•</span>
+                  <li key={j} className="flex items-start gap-2 font-body text-section-light-text/60 leading-relaxed">
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-section-light-text/30 shrink-0" />
                     {item}
                   </li>
                 ))}

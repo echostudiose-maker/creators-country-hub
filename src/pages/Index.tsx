@@ -27,9 +27,7 @@ const Index = () => {
       <ValueAnchorSection />
       <PricingSection />
       <GuaranteeSection />
-      <AuthoritySection />
       <FAQSection />
-      <FooterSection />
     </main>
   );
 };

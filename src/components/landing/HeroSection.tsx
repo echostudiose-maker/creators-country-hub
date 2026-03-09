@@ -89,7 +89,7 @@ const HeroSection = () => {
           </motion.p>
 
           {/* ── Editorial headline (Darling-style massive type) ── */}
-          <h1 className="headline-editorial text-[clamp(3rem,9vw,8.5rem)] text-foreground max-w-[12ch] mb-8">
+          <h1 className="headline-editorial text-[clamp(2.2rem,6vw,5.5rem)] text-foreground max-w-[14ch] mb-8">
             <span className="block overflow-hidden">
               <WordReveal text="Cresça de 5 a" delay={0.3} />
             </span>
@@ -103,7 +103,7 @@ const HeroSection = () => {
             <span className="block overflow-hidden">
               <WordReveal text="qualificados" delay={0.7} />
             </span>
-            <span className="block overflow-hidden headline-serif-italic text-[clamp(2rem,6vw,5.5rem)] text-accent/90">
+            <span className="block overflow-hidden headline-serif-italic text-[clamp(1.6rem,4vw,3.5rem)] text-accent/90">
               <WordReveal text="por mês." delay={0.9} />
             </span>
           </h1>

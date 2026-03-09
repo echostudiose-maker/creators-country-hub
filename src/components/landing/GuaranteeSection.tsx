@@ -11,20 +11,21 @@ const guarantees = [
 ];
 
 const GuaranteeSection = () => (
-  <section className="py-20 md:py-28 bg-secondary relative">
-    <div className="absolute inset-0">
-      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-success/5 rounded-full blur-[100px]" />
-    </div>
-    <div className="relative max-w-[900px] mx-auto px-5">
+  <section className="py-20 md:py-28 section-dark relative overflow-hidden">
+    <div className="absolute inset-0 gradient-bg-subtle opacity-40 pointer-events-none" />
+
+    <div className="relative max-w-5xl mx-auto px-6 md:px-10">
+      {/* ── Grid of small guarantees ── */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-2xl md:text-4xl font-bold text-foreground text-center mb-14"
+        className="headline-editorial text-[clamp(2rem,4vw,3rem)] text-foreground text-center mb-14"
       >
         Sua Segurança é Prioridade
       </motion.h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-16 md:mb-20">
         {guarantees.map((g, i) => (
           <motion.div
             key={i}
@@ -32,18 +33,79 @@ const GuaranteeSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.08 }}
-            className="rounded-xl p-6 border border-success/20 bg-card/30 hover:border-success/40 transition-all duration-300"
+            className="rounded-xl p-6 border border-border/50 bg-card/30 hover:border-success/30 transition-all duration-300"
           >
             <div className="flex items-center gap-2 mb-3">
               <div className="w-6 h-6 rounded-full bg-success/20 flex items-center justify-center flex-shrink-0">
                 <Check className="w-3.5 h-3.5 text-success" />
               </div>
-              <h3 className="font-bold text-foreground">{g.title}</h3>
+              <h3 className="font-display font-bold text-foreground">{g.title}</h3>
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed">{g.desc}</p>
+            <p className="font-body text-muted-foreground text-sm leading-relaxed">{g.desc}</p>
           </motion.div>
         ))}
       </div>
+
+      {/* ── Big 7-day guarantee card (glassmorphism style) ── */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="relative rounded-2xl overflow-hidden"
+        style={{
+          background: "linear-gradient(135deg, hsl(265 50% 18% / 0.5) 0%, hsl(232 40% 12% / 0.8) 100%)",
+          boxShadow: "0 0 80px -20px hsl(265 80% 60% / 0.25), inset 0 1px 0 0 hsl(265 50% 60% / 0.1)",
+        }}
+      >
+        {/* Glowing top bar */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full" />
+
+        {/* Border glow effect */}
+        <div
+          className="absolute inset-0 rounded-2xl pointer-events-none"
+          style={{
+            border: "1px solid hsl(265 50% 50% / 0.2)",
+          }}
+        />
+
+        <div className="relative flex flex-col md:flex-row items-center gap-10 p-10 md:p-14">
+          {/* Big number 7 */}
+          <div className="relative flex-shrink-0">
+            {/* Circular glow ring */}
+            <div
+              className="w-40 h-40 md:w-52 md:h-52 rounded-full flex items-center justify-center"
+              style={{
+                background: "radial-gradient(circle, hsl(265 60% 30% / 0.3) 0%, transparent 70%)",
+                boxShadow: "0 0 60px 10px hsl(265 80% 50% / 0.15), inset 0 0 40px 10px hsl(265 60% 40% / 0.1)",
+                border: "2px solid hsl(265 50% 50% / 0.2)",
+              }}
+            >
+              <span
+                className="font-display font-black text-[6rem] md:text-[8rem] leading-none"
+                style={{
+                  background: "linear-gradient(180deg, hsl(265 60% 50%) 0%, hsl(265 40% 35%) 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                7
+              </span>
+            </div>
+          </div>
+
+          {/* Text content */}
+          <div className="text-center md:text-left">
+            <h3 className="font-display font-bold text-xl md:text-2xl text-primary mb-4">
+              E além de tudo, você tem 7 dias de garantia incondicional
+            </h3>
+            <p className="font-body text-muted-foreground leading-[1.8] max-w-lg">
+              Se por qualquer motivo possível no planeta terra você não gostar da metodologia ou do produto, nossos pagamentos são processados pela Hotmart, seu reembolso é automático. Sem burocracia, sem letras miúdas.
+            </p>
+          </div>
+        </div>
+      </motion.div>
     </div>
   </section>
 );

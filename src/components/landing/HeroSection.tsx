@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import heroBg from "@/assets/hero-bg.jpg";
-import bahHeroReal from "@/assets/bah-hero-real.png";
+import bahHeroCropped from "@/assets/bah-hero-cropped.png";
 
 const CTA_URL = "https://hotm.art/7GmUn4q";
 
@@ -57,62 +57,64 @@ const HeroSection = () => {
         </motion.div>
       </motion.div>
 
-      {/* ── Floating photo — hidden on small screens, visible md+ ── */}
+      {/* ── Cropped photo at top with fade gradient ── */}
       <motion.div
-        className="hidden md:block absolute right-0 bottom-0 md:right-8 lg:right-16 z-10 w-[300px] md:w-[400px] lg:w-[480px] h-[85%]"
-        initial={{ opacity: 0, x: 60 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+        className="relative z-10 w-full flex justify-center pt-20 md:pt-24"
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
       >
-        <img
-          src={bahHeroReal}
-          alt="Bah Storani"
-          className="w-full h-full object-cover object-top"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+        <div className="relative w-[280px] h-[320px] md:w-[360px] md:h-[420px] lg:w-[420px] lg:h-[500px]">
+          <img
+            src={bahHeroCropped}
+            alt="Bah Storani"
+            className="w-full h-full object-cover object-top"
+          />
+          {/* Gradient fade from top to bottom */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
+        </div>
       </motion.div>
 
       {/* ── Main content ── */}
-      <div className="relative z-20 flex flex-col justify-end flex-1 pb-16 md:pb-24 pt-24 md:pt-28">
+      <div className="relative z-20 flex flex-col flex-1 pb-16 md:pb-24 -mt-16 md:-mt-24">
         <div className="max-w-7xl mx-auto px-5 md:px-10 w-full">
 
           {/* ── Eyebrow label ── */}
           <motion.p
-            className="label-caps text-accent mb-4 md:mb-6"
+            className="label-caps text-accent mb-4 md:mb-6 text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
           >
             ✦ Creators Country — Método MCC
           </motion.p>
 
           {/* ── Editorial headline ── */}
-          <h1 className="headline-editorial text-[clamp(2.8rem,9vw,5.5rem)] text-foreground max-w-[14ch] mb-6 md:mb-8">
+          <h1 className="headline-editorial text-[clamp(2.4rem,8vw,5.5rem)] text-foreground max-w-[16ch] mx-auto text-center mb-6 md:mb-8">
             <span className="block overflow-hidden">
-              <WordReveal text="Cresça de 5 a" delay={0.3} />
+              <WordReveal text="Cresça de 5 a" delay={0.5} />
             </span>
             <span className="block overflow-hidden">
               <WordReveal
                 text="10 mil seguidores"
                 className="text-gradient"
-                delay={0.5}
+                delay={0.7}
               />
             </span>
             <span className="block overflow-hidden">
-              <WordReveal text="qualificados" delay={0.7} />
+              <WordReveal text="qualificados" delay={0.9} />
             </span>
-            <span className="block overflow-hidden headline-serif-italic text-[clamp(1.8rem,6vw,3.5rem)] text-accent/90">
-              <WordReveal text="por mês." delay={0.9} />
+            <span className="block overflow-hidden headline-serif-italic text-[clamp(1.6rem,5vw,3.5rem)] text-accent/90">
+              <WordReveal text="por mês." delay={1.1} />
             </span>
           </h1>
 
           {/* ── Subheadline ── */}
           <motion.p
-            className="font-body text-sm md:text-lg text-foreground/70 max-w-[520px] leading-[1.7] mb-8 md:mb-0"
+            className="font-body text-sm md:text-lg text-foreground/70 max-w-[520px] mx-auto text-center leading-[1.7] mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 1.1 }}
+            transition={{ duration: 0.7, delay: 1.3 }}
           >
             O método que{" "}
             <strong className="text-foreground font-semibold">127+ criadores e empresários</strong>{" "}
@@ -120,18 +122,22 @@ const HeroSection = () => {
             <em className="font-display italic text-accent/90">engajamento, autoridade e vendas.</em>
           </motion.p>
 
-          {/* ── Mobile CTA button ── */}
-          <motion.a
-            href={CTA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block md:hidden mt-2 gradient-primary text-primary-foreground font-body font-semibold text-base px-7 py-3.5 rounded-full"
+          {/* ── CTA button ── */}
+          <motion.div
+            className="flex justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.4 }}
+            transition={{ duration: 0.6, delay: 1.5 }}
           >
-            Garantir Minha Vaga →
-          </motion.a>
+            <a
+              href={CTA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="gradient-primary text-primary-foreground font-body font-semibold text-base px-8 py-4 rounded-full hover:scale-105 transition-transform"
+            >
+              Garantir Minha Vaga →
+            </a>
+          </motion.div>
         </div>
       </div>
 

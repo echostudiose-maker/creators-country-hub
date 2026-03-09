@@ -1,22 +1,10 @@
 import { motion, type Variants } from "framer-motion";
 
 const pains = [
-  {
-    emoji: "📱",
-    text: "Postou todos os dias e nenhum vídeo viralizou",
-  },
-  {
-    emoji: "✍️",
-    text: "Foi criar o seu roteiro e travou na hora de escrever",
-  },
-  {
-    emoji: "📈",
-    text: "Viu pessoas com menos seguidores crescendo mais rápido que você",
-  },
-  {
-    emoji: "🔄",
-    text: "Fez Dancinha. Participou de Trend. Usou música em alta. E nada funcionou.",
-  },
+  { emoji: "📱", text: "Postou todos os dias e nenhum vídeo viralizou" },
+  { emoji: "✍️", text: "Foi criar o seu roteiro e travou na hora de escrever" },
+  { emoji: "📈", text: "Viu pessoas com menos seguidores crescendo mais rápido que você" },
+  { emoji: "🔄", text: "Fez Dancinha. Participou de Trend. Usou música em alta. E nada funcionou." },
 ];
 
 const container: Variants = {
@@ -30,15 +18,15 @@ const item: Variants = {
 };
 
 const PainSection = () => (
-  <section className="section-dark py-20 md:py-32 relative overflow-hidden">
+  <section className="section-dark py-16 md:py-32 relative overflow-hidden">
     <div className="absolute inset-0 gradient-bg-subtle opacity-60 pointer-events-none" />
 
-    <div className="relative max-w-5xl mx-auto px-6 md:px-10">
-      <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
+    <div className="relative max-w-5xl mx-auto px-5 md:px-10">
+      <div className="grid md:grid-cols-2 gap-10 md:gap-20 items-start">
         {/* ── Left: headline ── */}
         <div className="md:sticky md:top-32">
           <motion.p
-            className="label-caps text-accent mb-5"
+            className="label-caps text-accent mb-4 md:mb-5"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -46,7 +34,7 @@ const PainSection = () => (
             Soa familiar?
           </motion.p>
           <motion.h2
-            className="headline-editorial text-[clamp(2.8rem,6vw,5rem)] text-foreground leading-[0.92]"
+            className="headline-editorial text-[clamp(2.8rem,9vw,5rem)] text-foreground leading-[0.92]"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -59,7 +47,7 @@ const PainSection = () => (
             se você já:
           </motion.h2>
           <motion.div
-            className="mt-8 w-12 h-px bg-primary/50"
+            className="mt-6 md:mt-8 w-12 h-px bg-primary/50"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
@@ -80,12 +68,12 @@ const PainSection = () => (
             <motion.div
               key={i}
               variants={item}
-              className="group flex items-start gap-5 py-7 border-b border-border/50 last:border-0"
+              className="group flex items-start gap-4 md:gap-5 py-6 md:py-7 border-b border-border/50 last:border-0"
             >
               <span className="text-2xl mt-0.5 shrink-0 group-hover:scale-110 transition-transform duration-200">
                 {p.emoji}
               </span>
-              <p className="font-body text-lg md:text-xl text-foreground/70 leading-[1.6] group-hover:text-foreground transition-colors duration-300">
+              <p className="font-body text-base md:text-xl text-foreground/70 leading-[1.6] group-hover:text-foreground transition-colors duration-300">
                 {p.text}
               </p>
             </motion.div>

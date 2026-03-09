@@ -81,13 +81,24 @@ const HeroSection = () => {
           >
             {/* Story Card */}
             <div className="relative w-[280px] md:w-[340px] lg:w-[380px] aspect-[9/16] rounded-[2rem] overflow-hidden bg-white shadow-2xl shadow-section-light-text/10">
-              {/* Story Image */}
-              <img
-                src={bahStoryClean}
-                alt="Bah Storani"
-                className="absolute inset-0 w-full h-full object-cover object-top"
-                loading="eager"
-              />
+              {/* Story Progress Bars */}
+              <div className="absolute top-3 left-3 right-3 z-20 flex gap-1">
+                <div className="flex-1 h-0.5 bg-white/30 rounded-full overflow-hidden">
+                  <div className="h-full w-full bg-white rounded-full" />
+                </div>
+                <div className="flex-1 h-0.5 bg-white/30 rounded-full" />
+                <div className="flex-1 h-0.5 bg-white/30 rounded-full" />
+              </div>
+
+              {/* Story Image - offset to hide original UI */}
+              <div className="absolute inset-0 overflow-hidden">
+                <img
+                  src={bahStoryClean}
+                  alt="Bah Storani"
+                  className="w-full h-[108%] object-cover -translate-y-[5%]"
+                  loading="eager"
+                />
+              </div>
             </div>
 
           </motion.div>

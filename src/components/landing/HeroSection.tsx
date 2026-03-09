@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import heroBg from "@/assets/hero-bg.jpg";
-import bahHero from "@/assets/bah-hero.jpg";
+import bahHeroReal from "@/assets/bah-hero-real.png";
 
 const CTA_URL = "https://hotm.art/7GmUn4q";
 

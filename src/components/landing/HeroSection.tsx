@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { Instagram, Linkedin, Facebook } from "lucide-react";
 import bahHeroCropped from "@/assets/bah-hero-cropped.png";
-
-const CTA_URL = "https://hotm.art/7GmUn4q";
+import bahStory from "@/assets/bah-story.png";
 
 const HeroSection = () => {
   return (
@@ -38,39 +37,26 @@ const HeroSection = () => {
 
             {/* Headline */}
             <motion.h1
-              className="font-body font-semibold tracking-tight text-[clamp(3rem,8vw,5.5rem)] leading-[0.95] mb-8"
+              className="font-body font-semibold tracking-tight text-[clamp(2.4rem,6.5vw,4.8rem)] leading-[0.95] mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.08 }}
             >
-              Crescimento
+              Cresça de 5 a 10 mil
               <br />
-              que vende{" "}
-              <span className="headline-serif-italic">de verdade</span>
+              seguidores qualificados{" "}
+              <span className="headline-serif-italic">por mês.</span>
             </motion.h1>
 
             {/* Subheadline */}
             <motion.p
-              className="font-body text-section-light-text/60 text-lg md:text-xl leading-relaxed max-w-[440px] mb-10"
+              className="font-body text-section-light-text/60 text-lg md:text-xl leading-relaxed max-w-[480px]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
             >
-              Estratégia, conteúdo e posicionamento para transformar Instagram em autoridade e faturamento.
+              O método que mais de 100 criadores e empresários usaram para virar referência no mercado country — e transformar o Instagram em uma máquina de engajamento, autoridade e vendas.
             </motion.p>
-
-            {/* CTA Button */}
-            <motion.a
-              href={CTA_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-section-light-text text-section-light px-8 py-4 font-body font-medium text-base hover:opacity-90 transition-opacity"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.35 }}
-            >
-              Entrar agora
-            </motion.a>
           </div>
 
           {/* Bottom Stats */}
@@ -80,7 +66,7 @@ const HeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            <span>127+ criadores ativos</span>
+            <span>100+ criadores ativos</span>
             <span>R$ 1.2M+ em vendas</span>
           </motion.div>
         </div>
@@ -119,9 +105,9 @@ const HeroSection = () => {
 
               {/* Story Image */}
               <img
-                src={bahHeroCropped}
+                src={bahStory}
                 alt="Bah Storani"
-                className="absolute inset-0 w-full h-full object-cover object-top"
+                className="absolute inset-0 w-full h-full object-cover object-center"
                 loading="eager"
               />
             </div>

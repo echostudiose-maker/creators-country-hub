@@ -80,38 +80,14 @@ const HeroSection = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           >
             {/* Story Card */}
-            <div className="relative w-[280px] md:w-[340px] lg:w-[380px] aspect-[9/16] rounded-[2rem] overflow-hidden bg-white shadow-2xl shadow-section-light-text/10">
-              {/* Story Progress Bars */}
-              <div className="absolute top-3 left-3 right-3 z-20 flex gap-1">
-                <div className="flex-1 h-0.5 bg-white/30 rounded-full overflow-hidden">
-                  <div className="h-full w-full bg-white rounded-full" />
-                </div>
-                <div className="flex-1 h-0.5 bg-white/30 rounded-full" />
-                <div className="flex-1 h-0.5 bg-white/30 rounded-full" />
-              </div>
-
-              {/* Story Header - username */}
-              <div className="absolute top-6 left-3 right-3 z-20 flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full overflow-hidden ring-2 ring-primary/70">
-                  <img 
-                    src={bahAvatar} 
-                    alt="Profile" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <span className="text-white text-sm font-medium drop-shadow-md">bahstorani</span>
-                <span className="text-white/60 text-xs drop-shadow-md">19 h</span>
-              </div>
-
-              {/* Story Image - offset to hide original UI */}
-              <div className="absolute inset-0 overflow-hidden">
-                <img
-                  src={bahStoryClean}
-                  alt="Bah Storani"
-                  className="w-full h-[108%] object-cover -translate-y-[5%]"
-                  loading="eager"
-                />
-              </div>
+            <div className="relative w-[280px] md:w-[340px] lg:w-[380px] aspect-[9/16] rounded-[2rem] overflow-hidden shadow-2xl shadow-section-light-text/15">
+              {/* Story Image - full authentic screenshot */}
+              <img
+                src={bahStoryClean}
+                alt="Bah Storani — Instagram Story"
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="eager"
+              />
             </div>
 
           </motion.div>

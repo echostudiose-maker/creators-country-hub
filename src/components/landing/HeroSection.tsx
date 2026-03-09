@@ -105,9 +105,9 @@ const HeroSection = () => {
 
               {/* Story Image */}
               <img
-                src={bahStory}
+                src={bahStoryClean}
                 alt="Bah Storani"
-                className="absolute inset-0 w-full h-full object-cover object-center"
+                className="absolute inset-0 w-full h-full object-cover object-top"
                 loading="eager"
               />
             </div>

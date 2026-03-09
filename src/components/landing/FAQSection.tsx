@@ -11,22 +11,21 @@ const faqs = [
 ];
 
 const FAQSection = () => (
-  <section id="faq" className="bg-background py-16 md:py-24 border-t border-border/40">
+  <section id="faq" className="section-light py-16 md:py-24 border-t border-section-light-text/10">
     <div className="max-w-3xl mx-auto px-6 md:px-10">
-      <p className="label-caps text-muted-foreground text-center mb-4">FAQ</p>
-      <h2 className="font-body font-semibold text-[clamp(2rem,6vw,4rem)] text-foreground text-center leading-[0.95] mb-10">
-        Dúvidas
-        <br />
-        <span className="headline-serif-italic text-gradient">frequentes</span>
+      <p className="label-caps text-section-light-text/45 text-center mb-4">FAQ</p>
+      <h2 className="font-body font-semibold text-[clamp(2rem,6vw,4rem)] text-section-light-text text-center leading-[0.95] mb-10">
+        Dúvidas{" "}
+        <span className="headline-serif-italic">frequentes</span>
       </h2>
 
       <Accordion type="single" collapsible className="space-y-2">
         {faqs.map((faq, i) => (
-          <AccordionItem key={i} value={`faq-${i}`} className="border border-border rounded-2xl overflow-hidden bg-card/30">
-            <AccordionTrigger className="text-left font-body font-semibold text-foreground hover:text-primary transition-colors px-6 py-5 [&[data-state=open]]:text-primary">
+          <AccordionItem key={i} value={`faq-${i}`} className="border border-section-light-text/10 rounded-2xl overflow-hidden bg-section-light">
+            <AccordionTrigger className="text-left font-body font-semibold text-section-light-text hover:text-section-light-text/70 transition-colors px-6 py-5">
               {faq.q}
             </AccordionTrigger>
-            <AccordionContent className="px-6 pb-5 text-muted-foreground leading-[1.7]">{faq.a}</AccordionContent>
+            <AccordionContent className="px-6 pb-5 text-section-light-text/60 leading-[1.7]">{faq.a}</AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>

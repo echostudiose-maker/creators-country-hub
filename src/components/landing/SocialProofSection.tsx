@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 
-const brands = ["Amsterdan", "Milano", "Velvet", "Nativa", "Cowboy Co.", "Ranch Lab"];
+const marqueeItems = [
+  "Instagram", "✦", "Engajamento", "✦", "Autoridade", "✦", "Vendas", "✦",
+  "Comunidade", "✦", "Método MCC", "✦", "127+ Alunos", "✦", "Resultados Reais", "✦", "Mercado Country", "✦",
+];
+
 const stats = [
   { number: "127+", label: "Alunos ativos" },
   { number: "90k", label: "Seguidores em 90 dias" },
@@ -9,11 +13,18 @@ const stats = [
 
 const SocialProofSection = () => (
   <section className="section-light border-y border-section-light-text/10 overflow-hidden">
-    <div className="py-5 border-b border-section-light-text/10">
-      <div className="max-w-6xl mx-auto px-6 md:px-10 flex gap-10 animate-marquee whitespace-nowrap">
-        {[...brands, ...brands].map((brand, i) => (
-          <span key={i} className="font-body text-section-light-text/35 text-lg md:text-2xl">
-            {brand}
+    <div className="py-5 border-b border-section-light-text/10 overflow-hidden">
+      <div className="flex gap-10 animate-marquee whitespace-nowrap w-max">
+        {[...marqueeItems, ...marqueeItems].map((item, i) => (
+          <span
+            key={i}
+            className={`font-body text-lg md:text-xl ${
+              item === "✦"
+                ? "text-section-light-text/60"
+                : "text-section-light-text/40"
+            }`}
+          >
+            {item}
           </span>
         ))}
       </div>

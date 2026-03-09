@@ -90,19 +90,6 @@ const HeroSection = () => {
                 <div className="flex-1 h-0.5 bg-white/30 rounded-full" />
               </div>
 
-              {/* Story Header */}
-              <div className="absolute top-6 left-3 right-3 z-20 flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center overflow-hidden">
-                  <img 
-                    src={bahHeroCropped} 
-                    alt="Profile" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <span className="text-white text-sm font-medium">bahstorani</span>
-                <span className="text-white/60 text-sm">6h</span>
-              </div>
-
               {/* Story Image */}
               <img
                 src={bahStoryClean}

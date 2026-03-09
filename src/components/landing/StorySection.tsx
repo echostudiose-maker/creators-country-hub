@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import bahEvent from "@/assets/bah-event.png";
+import bahCasual from "@/assets/bah-casual.png";
 
 const StorySection = () => (
   <section className="section-light py-20 md:py-32 overflow-hidden">

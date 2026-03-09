@@ -9,10 +9,10 @@ const items = [
 ];
 
 const ValueAnchorSection = () => (
-  <section className="section-light py-16 md:py-24 border-t border-section-light-text/10">
+  <section className="bg-background py-16 md:py-24 border-t border-border/40">
     <div className="max-w-3xl mx-auto px-6 md:px-10">
-      <p className="label-caps text-section-light-text/45 text-center mb-4">Comparativo</p>
-      <h2 className="font-body font-semibold text-[clamp(1.9rem,6vw,4rem)] text-section-light-text text-center leading-[0.95] mb-10">
+      <p className="label-caps text-muted-foreground text-center mb-4">Comparativo</p>
+      <h2 className="font-body font-semibold text-[clamp(1.9rem,6vw,4rem)] text-foreground text-center leading-[0.95] mb-10">
         Quanto custaria
         <br />
         <span className="headline-serif-italic">tudo isso</span>
@@ -26,15 +26,15 @@ const ValueAnchorSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.06 }}
-            className="flex justify-between rounded-xl border border-section-light-text/10 p-4"
+            className="flex justify-between rounded-xl border border-border/50 p-4"
           >
-            <span className="text-section-light-text/70">{item.label}</span>
-            <span className="text-section-light-text/50 line-through">{item.price}</span>
+            <span className="text-foreground/70">{item.label}</span>
+            <span className="text-muted-foreground line-through">{item.price}</span>
           </motion.div>
         ))}
-        <div className="flex justify-between rounded-xl border-2 border-section-light-text/20 p-4">
-          <span className="font-semibold text-section-light-text">TOTAL SEPARADO</span>
-          <span className="font-semibold text-section-light-text/70 line-through">R$ 5.300+</span>
+        <div className="flex justify-between rounded-xl border-2 border-foreground/20 p-4">
+          <span className="font-semibold text-foreground">TOTAL SEPARADO</span>
+          <span className="font-semibold text-muted-foreground line-through">R$ 5.300+</span>
         </div>
       </div>
 
@@ -42,11 +42,11 @@ const ValueAnchorSection = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="mt-8 rounded-2xl border-2 border-section-light-text bg-section-light-text/5 p-8 text-center"
+        className="mt-8 rounded-2xl border-2 border-foreground/20 bg-card p-8 text-center"
       >
-        <p className="label-caps text-section-light-text/60 mb-2">✓ Tudo junto</p>
-        <p className="font-body font-semibold text-[clamp(2.5rem,8vw,4.5rem)] text-section-light-text leading-none">R$ 997</p>
-        <p className="text-section-light-text/50 mt-2">com acesso perpétuo</p>
+        <p className="label-caps text-muted-foreground mb-2">✓ Tudo junto</p>
+        <p className="font-body font-semibold text-[clamp(2.5rem,8vw,4.5rem)] text-foreground leading-none">R$ 997</p>
+        <p className="text-muted-foreground mt-2">com acesso perpétuo</p>
       </motion.div>
     </div>
   </section>

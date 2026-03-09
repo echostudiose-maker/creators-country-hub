@@ -5,7 +5,6 @@ import bahHeroReal from "@/assets/bah-hero-real.png";
 
 const CTA_URL = "https://hotm.art/7GmUn4q";
 
-// Word-by-word reveal (Darling-style)
 const WordReveal = ({ text, className = "", delay = 0 }: { text: string; className?: string; delay?: number }) => {
   const words = text.split(" ");
   return (
@@ -58,9 +57,9 @@ const HeroSection = () => {
         </motion.div>
       </motion.div>
 
-      {/* ── Floating photo ── */}
+      {/* ── Floating photo — hidden on small screens, visible md+ ── */}
       <motion.div
-        className="absolute right-0 bottom-0 md:right-8 lg:right-16 z-10 w-[300px] md:w-[400px] lg:w-[480px] h-[85%]"
+        className="hidden md:block absolute right-0 bottom-0 md:right-8 lg:right-16 z-10 w-[300px] md:w-[400px] lg:w-[480px] h-[85%]"
         initial={{ opacity: 0, x: 60 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
@@ -75,12 +74,12 @@ const HeroSection = () => {
       </motion.div>
 
       {/* ── Main content ── */}
-      <div className="relative z-20 flex flex-col justify-end flex-1 pb-20 md:pb-24 pt-28">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 w-full">
+      <div className="relative z-20 flex flex-col justify-end flex-1 pb-16 md:pb-24 pt-24 md:pt-28">
+        <div className="max-w-7xl mx-auto px-5 md:px-10 w-full">
 
           {/* ── Eyebrow label ── */}
           <motion.p
-            className="label-caps text-accent mb-6"
+            className="label-caps text-accent mb-4 md:mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -88,8 +87,8 @@ const HeroSection = () => {
             ✦ Creators Country — Método MCC
           </motion.p>
 
-          {/* ── Editorial headline (Darling-style massive type) ── */}
-          <h1 className="headline-editorial text-[clamp(2.2rem,6vw,5.5rem)] text-foreground max-w-[14ch] mb-8">
+          {/* ── Editorial headline ── */}
+          <h1 className="headline-editorial text-[clamp(2.8rem,9vw,5.5rem)] text-foreground max-w-[14ch] mb-6 md:mb-8">
             <span className="block overflow-hidden">
               <WordReveal text="Cresça de 5 a" delay={0.3} />
             </span>
@@ -103,14 +102,14 @@ const HeroSection = () => {
             <span className="block overflow-hidden">
               <WordReveal text="qualificados" delay={0.7} />
             </span>
-            <span className="block overflow-hidden headline-serif-italic text-[clamp(1.6rem,4vw,3.5rem)] text-accent/90">
+            <span className="block overflow-hidden headline-serif-italic text-[clamp(1.8rem,6vw,3.5rem)] text-accent/90">
               <WordReveal text="por mês." delay={0.9} />
             </span>
           </h1>
 
           {/* ── Subheadline ── */}
           <motion.p
-            className="font-body text-base md:text-lg text-foreground/70 max-w-[520px] leading-[1.7]"
+            className="font-body text-sm md:text-lg text-foreground/70 max-w-[520px] leading-[1.7] mb-8 md:mb-0"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 1.1 }}
@@ -120,12 +119,25 @@ const HeroSection = () => {
             usaram para virar referência no mercado country — e transformar o Instagram em uma máquina de{" "}
             <em className="font-display italic text-accent/90">engajamento, autoridade e vendas.</em>
           </motion.p>
+
+          {/* ── Mobile CTA button ── */}
+          <motion.a
+            href={CTA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block md:hidden mt-2 gradient-primary text-primary-foreground font-body font-semibold text-base px-7 py-3.5 rounded-full"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.4 }}
+          >
+            Garantir Minha Vaga →
+          </motion.a>
         </div>
       </div>
 
       {/* ── Scroll indicator ── */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8 }}
@@ -136,7 +148,7 @@ const HeroSection = () => {
           className="flex flex-col items-center gap-2"
         >
           <span className="label-caps text-foreground/30 text-[0.6rem]">scroll</span>
-          <div className="w-px h-10 bg-gradient-to-b from-foreground/30 to-transparent" />
+          <div className="w-px h-8 md:h-10 bg-gradient-to-b from-foreground/30 to-transparent" />
         </motion.div>
       </motion.div>
     </section>

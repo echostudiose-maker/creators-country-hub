@@ -99,15 +99,6 @@ const HeroSection = () => {
               />
             </div>
 
-            {/* Floating Badge */}
-            <motion.div
-              className="absolute -bottom-4 -left-4 md:bottom-8 md:-left-8 w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-section-light-text text-section-light flex items-center justify-center shadow-xl"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.6, type: "spring" }}
-            >
-              <span className="text-2xl md:text-3xl">✷</span>
-            </motion.div>
           </motion.div>
         </div>
       </div>

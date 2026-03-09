@@ -90,13 +90,15 @@ const HeroSection = () => {
                 <div className="flex-1 h-0.5 bg-white/30 rounded-full" />
               </div>
 
-              {/* Story Image */}
-              <img
-                src={bahStoryClean}
-                alt="Bah Storani"
-                className="absolute inset-0 w-full h-full object-cover object-top"
-                loading="eager"
-              />
+              {/* Story Image - cropped to hide original UI elements */}
+              <div className="absolute inset-0 overflow-hidden">
+                <img
+                  src={bahStoryClean}
+                  alt="Bah Storani"
+                  className="w-full h-[115%] object-cover object-bottom"
+                  loading="eager"
+                />
+              </div>
             </div>
 
           </motion.div>

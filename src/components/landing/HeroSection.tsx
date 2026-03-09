@@ -1,51 +1,57 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { Instagram, Linkedin, CircleDot } from "lucide-react";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import { Instagram, Linkedin, Facebook } from "lucide-react";
 import bahHeroCropped from "@/assets/bah-hero-cropped.png";
 
 const CTA_URL = "https://hotm.art/7GmUn4q";
 
 const HeroSection = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
-
   return (
-    <section ref={ref} className="relative min-h-screen bg-section-light text-section-light-text overflow-hidden">
+    <section className="relative min-h-screen bg-section-light text-section-light-text overflow-hidden">
       <div className="grid lg:grid-cols-2 min-h-screen">
-        <div className="px-6 md:px-12 lg:px-16 py-8 md:py-12 flex flex-col justify-between">
+        {/* Left Content */}
+        <div className="px-6 md:px-12 lg:px-16 xl:px-24 py-8 md:py-12 flex flex-col justify-between">
+          {/* Logo */}
           <div className="flex items-center gap-2 font-body font-semibold text-xl">
             <span className="w-7 h-7 rounded-md bg-section-light-text text-section-light flex items-center justify-center text-xs">✷</span>
             Bah
           </div>
 
-          <div className="max-w-[620px] py-8 md:py-12">
+          {/* Main Content */}
+          <div className="max-w-[540px] py-8 md:py-12">
+            {/* Social Icons */}
             <motion.div
-              className="inline-flex items-center gap-3 rounded-full border border-section-light-text/15 px-3 py-1.5 mb-8"
+              className="flex items-center gap-4 mb-10"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <a href="#" aria-label="Instagram" className="text-section-light-text/70 hover:text-section-light-text transition-colors"><Instagram className="w-4 h-4" /></a>
-              <a href="#" aria-label="LinkedIn" className="text-section-light-text/70 hover:text-section-light-text transition-colors"><Linkedin className="w-4 h-4" /></a>
-              <a href="#" aria-label="Comunidade" className="text-section-light-text/70 hover:text-section-light-text transition-colors"><CircleDot className="w-4 h-4" /></a>
+              <a href="#" aria-label="LinkedIn" className="w-10 h-10 rounded-full border border-section-light-text/20 flex items-center justify-center text-section-light-text/70 hover:text-section-light-text hover:border-section-light-text/40 transition-all">
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a href="#" aria-label="Facebook" className="w-10 h-10 rounded-full border border-section-light-text/20 flex items-center justify-center text-section-light-text/70 hover:text-section-light-text hover:border-section-light-text/40 transition-all">
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a href="#" aria-label="Instagram" className="w-10 h-10 rounded-full border border-section-light-text/20 flex items-center justify-center text-section-light-text/70 hover:text-section-light-text hover:border-section-light-text/40 transition-all">
+                <Instagram className="w-4 h-4" />
+              </a>
             </motion.div>
 
+            {/* Headline */}
             <motion.h1
-              className="font-body font-semibold tracking-tight text-[clamp(2.8rem,10vw,7.2rem)] leading-[0.9] mb-6"
+              className="font-body font-semibold tracking-tight text-[clamp(3rem,8vw,5.5rem)] leading-[0.95] mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.08 }}
             >
               Crescimento
               <br />
-              que vende
-              <br />
+              que vende{" "}
               <span className="headline-serif-italic">de verdade</span>
             </motion.h1>
 
+            {/* Subheadline */}
             <motion.p
-              className="font-body text-section-light-text/55 text-[clamp(1rem,2.6vw,2rem)] leading-[1.35] max-w-[18ch] mb-8"
+              className="font-body text-section-light-text/60 text-lg md:text-xl leading-relaxed max-w-[440px] mb-10"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
@@ -53,11 +59,12 @@ const HeroSection = () => {
               Estratégia, conteúdo e posicionamento para transformar Instagram em autoridade e faturamento.
             </motion.p>
 
+            {/* CTA Button */}
             <motion.a
               href={CTA_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-section-light-text text-section-light px-8 py-4 font-body font-semibold hover:opacity-90 transition-opacity"
+              className="inline-flex items-center justify-center rounded-full bg-section-light-text text-section-light px-8 py-4 font-body font-medium text-base hover:opacity-90 transition-opacity"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.35 }}
@@ -66,27 +73,70 @@ const HeroSection = () => {
             </motion.a>
           </div>
 
+          {/* Bottom Stats */}
           <motion.div
-            className="text-section-light-text/40 font-body text-sm flex items-center gap-8 overflow-hidden"
+            className="text-section-light-text/50 font-body text-sm flex items-center gap-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
             <span>127+ criadores ativos</span>
             <span>R$ 1.2M+ em vendas</span>
-            <span>90 dias para escala</span>
           </motion.div>
         </div>
 
-        <motion.div className="relative min-h-[52vh] lg:min-h-screen bg-background" style={{ y: imageY }}>
-          <img
-            src={bahHeroCropped}
-            alt="Bah Storani"
-            className="absolute inset-0 w-full h-full object-contain object-top"
-            loading="eager"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
-        </motion.div>
+        {/* Right Side - Instagram Story Frame */}
+        <div className="relative min-h-[60vh] lg:min-h-screen flex items-center justify-center lg:justify-start px-6 lg:px-0">
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+          >
+            {/* Story Card */}
+            <div className="relative w-[280px] md:w-[340px] lg:w-[380px] aspect-[9/16] rounded-[2rem] overflow-hidden bg-white shadow-2xl shadow-section-light-text/10">
+              {/* Story Progress Bars */}
+              <div className="absolute top-3 left-3 right-3 z-20 flex gap-1">
+                <div className="flex-1 h-0.5 bg-white/30 rounded-full overflow-hidden">
+                  <div className="h-full w-full bg-white rounded-full" />
+                </div>
+                <div className="flex-1 h-0.5 bg-white/30 rounded-full" />
+                <div className="flex-1 h-0.5 bg-white/30 rounded-full" />
+              </div>
+
+              {/* Story Header */}
+              <div className="absolute top-6 left-3 right-3 z-20 flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-orange-400 flex items-center justify-center overflow-hidden">
+                  <img 
+                    src={bahHeroCropped} 
+                    alt="Profile" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <span className="text-white text-sm font-medium">bahstorani</span>
+                <span className="text-white/60 text-sm">6h</span>
+              </div>
+
+              {/* Story Image */}
+              <img
+                src={bahHeroCropped}
+                alt="Bah Storani"
+                className="absolute inset-0 w-full h-full object-cover object-top"
+                loading="eager"
+              />
+            </div>
+
+            {/* Floating Badge */}
+            <motion.div
+              className="absolute -bottom-4 -left-4 md:bottom-8 md:-left-8 w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-section-light-text text-section-light flex items-center justify-center shadow-xl"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.6, type: "spring" }}
+            >
+              <span className="text-2xl md:text-3xl">✷</span>
+            </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -8,32 +8,51 @@ const audiences = [
 ];
 
 const AudienceSection = () => (
-  <section className="py-20 md:py-28 bg-background relative">
-    <div className="absolute inset-0 gradient-bg-subtle opacity-50" />
-    <div className="relative max-w-[900px] mx-auto px-5">
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-2xl md:text-4xl font-bold text-foreground text-center mb-14"
-      >
-        Pra Quem É o Creators Country?
-      </motion.h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {audiences.map((a, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
+  <section className="section-dark py-20 md:py-32 relative overflow-hidden">
+    <div className="absolute inset-0 gradient-bg-subtle opacity-40 pointer-events-none" />
+
+    <div className="relative max-w-5xl mx-auto px-6 md:px-10">
+      <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
+        {/* Left */}
+        <div>
+          <motion.p
+            className="label-caps text-accent mb-5"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            Para quem é
+          </motion.p>
+          <motion.h2
+            className="headline-editorial text-[clamp(2.5rem,5.5vw,4.5rem)] text-foreground leading-[0.92]"
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.1 }}
-            className="rounded-xl p-6 text-center border border-border bg-card/50 backdrop-blur-sm hover:border-primary/40 transition-all duration-300 hover-lift"
+            transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="text-[2.5rem] mb-4">{a.emoji}</div>
-            <h3 className="text-lg font-bold text-gradient mb-2">{a.title}</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">{a.desc}</p>
-          </motion.div>
-        ))}
+            Pra quem é o
+            <br />
+            <span className="headline-serif-italic text-gradient">Creators Country?</span>
+          </motion.h2>
+        </div>
+
+        {/* Right */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {audiences.map((a, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+              className="p-6 rounded-lg border border-border/60 bg-card/40 hover:border-primary/30 transition-all duration-300 card-glow text-center"
+            >
+              <div className="text-3xl mb-4">{a.emoji}</div>
+              <h3 className="font-display font-bold text-base text-foreground mb-2">{a.title}</h3>
+              <p className="font-body text-xs text-muted-foreground leading-[1.7]">{a.desc}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   </section>

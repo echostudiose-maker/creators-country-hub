@@ -80,12 +80,12 @@ const HeroSection = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           >
             {/* Story Card */}
-            <div className="relative w-[280px] md:w-[340px] lg:w-[380px] aspect-[9/16] rounded-[1.5rem] overflow-hidden shadow-2xl shadow-section-light-text/15">
-              {/* Story Image - full authentic screenshot */}
+            <div className="relative w-[280px] md:w-[340px] lg:w-[380px] aspect-[9/16] rounded-[1.5rem] overflow-hidden bg-background shadow-2xl shadow-section-light-text/15">
+              {/* Story Image - full authentic screenshot (no crop) */}
               <img
                 src={bahStoryClean}
                 alt="Bah Storani — Instagram Story"
-                className="absolute inset-0 w-full h-[106%] object-cover object-top translate-y-[2%]"
+                className="absolute inset-0 w-full h-full object-contain"
                 loading="eager"
               />
             </div>

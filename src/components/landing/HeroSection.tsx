@@ -60,7 +60,7 @@ const HeroSection = () => {
 
       {/* ── Floating photo ── */}
       <motion.div
-        className="absolute right-0 bottom-0 md:right-8 lg:right-16 z-10 w-[280px] md:w-[380px] lg:w-[440px] h-full"
+        className="absolute right-0 bottom-0 md:right-8 lg:right-16 z-10 w-[300px] md:w-[400px] lg:w-[480px] h-[85%]"
         initial={{ opacity: 0, x: 60 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
@@ -69,9 +69,9 @@ const HeroSection = () => {
           src={bahHeroReal}
           alt="Bah Storani"
           className="w-full h-full object-cover object-top"
-          style={{ maskImage: "linear-gradient(to left, rgba(0,0,0,0.85) 60%, transparent 100%), linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 30%)", WebkitMaskImage: "linear-gradient(to left, rgba(0,0,0,0.85) 60%, transparent 100%), linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 30%)", maskComposite: "intersect", WebkitMaskComposite: "source-in" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent to-background/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
       </motion.div>
 
       {/* ── Main content ── */}
@@ -110,7 +110,7 @@ const HeroSection = () => {
 
           {/* ── Subheadline ── */}
           <motion.p
-            className="font-body text-base md:text-lg text-foreground/70 max-w-[520px] leading-[1.7] mb-10"
+            className="font-body text-base md:text-lg text-foreground/70 max-w-[520px] leading-[1.7]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 1.1 }}
@@ -120,29 +120,6 @@ const HeroSection = () => {
             usaram para virar referência no mercado country — e transformar o Instagram em uma máquina de{" "}
             <em className="font-display italic text-accent/90">engajamento, autoridade e vendas.</em>
           </motion.p>
-
-          {/* ── CTA ── */}
-          <motion.div
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.3 }}
-          >
-            <a
-              href={CTA_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="gradient-primary text-primary-foreground font-body font-semibold text-base px-8 py-4 rounded-full hover:-translate-y-1 hover:shadow-[0_12px_40px_-8px_hsl(265_80%_60%_/_0.6)] transition-all duration-300 inline-block"
-            >
-              Garantir Minha Vaga Agora →
-            </a>
-            <a
-              href="#solution"
-              className="font-body text-sm text-foreground/50 hover:text-foreground/80 transition-colors underline underline-offset-4"
-            >
-              Ver como funciona
-            </a>
-          </motion.div>
         </div>
       </div>
 

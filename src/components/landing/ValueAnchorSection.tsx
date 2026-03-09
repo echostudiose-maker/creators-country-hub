@@ -46,7 +46,7 @@ const ValueAnchorSection = () => (
       >
         <p className="label-caps text-muted-foreground mb-2">✓ Tudo junto</p>
         <p className="font-body font-semibold text-[clamp(2.5rem,8vw,4.5rem)] text-foreground leading-none">R$ 997</p>
-        <p className="text-muted-foreground mt-2">com acesso perpétuo</p>
+        <p className="text-muted-foreground mt-2">acesso completo</p>
       </motion.div>
     </div>
   </section>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import bahHero from "@/assets/bah-hero.jpg";
+import bahHorse from "@/assets/bah-horse.png";
 
 const stats = [
   { number: "6+", label: "Anos no Mercado" },

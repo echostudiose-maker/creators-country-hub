@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Instagram, Linkedin, Facebook } from "lucide-react";
-import bahHeroCropped from "@/assets/bah-hero-cropped.png";
+import bahAvatar from "@/assets/bah-avatar.png";
 import bahStoryClean from "@/assets/bah-story-clean.png";
 
 const HeroSection = () => {

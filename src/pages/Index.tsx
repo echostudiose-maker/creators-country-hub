@@ -6,7 +6,7 @@ import SolutionSection from "@/components/landing/SolutionSection";
 import DeliverablesSection from "@/components/landing/DeliverablesSection";
 import AudienceSection from "@/components/landing/AudienceSection";
 import ValueAnchorSection from "@/components/landing/ValueAnchorSection";
-import PricingSection from "@/components/landing/PricingSection";
+
 import GuaranteeSection from "@/components/landing/GuaranteeSection";
 import AuthoritySection from "@/components/landing/AuthoritySection";
 import FAQSection from "@/components/landing/FAQSection";

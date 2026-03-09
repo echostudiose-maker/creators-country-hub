@@ -15,38 +15,6 @@ const GuaranteeSection = () => (
     <div className="absolute inset-0 gradient-bg-subtle opacity-40 pointer-events-none" />
 
     <div className="relative max-w-5xl mx-auto px-6 md:px-10">
-      {/* ── Grid of small guarantees ── */}
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="headline-editorial text-[clamp(2rem,4vw,3rem)] text-foreground text-center mb-14"
-      >
-        Sua Segurança é Prioridade
-      </motion.h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-16 md:mb-20">
-        {guarantees.map((g, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.08 }}
-            className="rounded-xl p-6 border border-border/50 bg-card/30 hover:border-success/30 transition-all duration-300"
-          >
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-6 h-6 rounded-full bg-success/20 flex items-center justify-center flex-shrink-0">
-                <Check className="w-3.5 h-3.5 text-success" />
-              </div>
-              <h3 className="font-display font-bold text-foreground">{g.title}</h3>
-            </div>
-            <p className="font-body text-muted-foreground text-sm leading-relaxed">{g.desc}</p>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* ── Big 7-day guarantee card (glassmorphism style) ── */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

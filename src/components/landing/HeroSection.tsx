@@ -92,7 +92,7 @@ const HeroSection = () => {
 
               {/* Story Header - username */}
               <div className="absolute top-6 left-3 right-3 z-20 flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full overflow-hidden ring-2 ring-purple-500/70">
+                <div className="w-8 h-8 rounded-full overflow-hidden ring-2 ring-primary/70">
                   <img 
                     src={bahAvatar} 
                     alt="Profile" 

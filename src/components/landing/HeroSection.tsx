@@ -106,7 +106,7 @@ const HeroSection = () => {
 
               {/* Story Header */}
               <div className="absolute top-6 left-3 right-3 z-20 flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-orange-400 flex items-center justify-center overflow-hidden">
+                <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center overflow-hidden">
                   <img 
                     src={bahHeroCropped} 
                     alt="Profile" 

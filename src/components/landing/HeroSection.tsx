@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Instagram, Linkedin, Facebook } from "lucide-react";
-import bahHeroCropped from "@/assets/bah-hero-cropped.png";
+import bahAvatar from "@/assets/bah-avatar.png";
 import bahStoryClean from "@/assets/bah-story-clean.png";
 
 const HeroSection = () => {
@@ -92,11 +92,11 @@ const HeroSection = () => {
 
               {/* Story Header - username */}
               <div className="absolute top-6 left-3 right-3 z-20 flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-white/40">
+                <div className="w-8 h-8 rounded-full overflow-hidden ring-2 ring-primary/70">
                   <img 
-                    src={bahStoryClean} 
+                    src={bahAvatar} 
                     alt="Profile" 
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <span className="text-white text-sm font-medium drop-shadow-md">bahstorani</span>

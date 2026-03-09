@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { Instagram, Linkedin, Facebook } from "lucide-react";
 import bahHeroCropped from "@/assets/bah-hero-cropped.png";
-
-const CTA_URL = "https://hotm.art/7GmUn4q";
+import bahStory from "@/assets/bah-story.png";
 
 const HeroSection = () => {
   return (

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -24,8 +24,8 @@
     --muted: 232 30% 18%;
     --muted-foreground: 232 15% 60%;
 
-    --accent: 265 90% 70%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 38 85% 65%;
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -33,11 +33,15 @@
     --success: 145 63% 49%;
     --success-foreground: 0 0% 100%;
 
-    --border: 232 30% 20%;
+    --border: 232 30% 22%;
     --input: 232 30% 20%;
     --ring: 265 80% 60%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
+
+    /* Light section */
+    --section-light: 40 30% 96%;
+    --section-light-text: 232 40% 12%;
 
     --sidebar-background: 232 40% 8%;
     --sidebar-foreground: 0 0% 96%;
@@ -57,11 +61,12 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Playfair Display', Georgia, serif;
   }
 
   html {
@@ -70,26 +75,137 @@
 }
 
 @layer utilities {
-  .hover-lift {
-    @apply transition-transform duration-200 hover:-translate-y-1;
+  /* ─── TYPOGRAPHY ─── */
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  .font-body {
+    font-family: 'DM Sans', -apple-system, sans-serif;
   }
 
-  .glow-purple {
-    box-shadow: 0 0 60px -12px hsl(265 80% 60% / 0.4);
+  /* ─── DARLING HEADLINE STYLES ─── */
+  .headline-editorial {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.03em;
   }
 
-  .gradient-purple {
+  .headline-serif-italic {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
+  .label-caps {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  /* ─── GLOWS & GRADIENTS ─── */
+  .glow-primary {
+    box-shadow: 0 0 80px -20px hsl(265 80% 60% / 0.5);
+  }
+
+  .gradient-primary {
     background: linear-gradient(135deg, hsl(265 80% 60%) 0%, hsl(280 90% 50%) 50%, hsl(300 80% 55%) 100%);
   }
 
   .gradient-bg-subtle {
-    background: radial-gradient(ellipse at 50% 0%, hsl(265 80% 60% / 0.15) 0%, transparent 60%);
+    background: radial-gradient(ellipse at 50% 0%, hsl(265 80% 60% / 0.12) 0%, transparent 65%);
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, hsl(265 80% 70%), hsl(300 80% 65%));
+    background: linear-gradient(135deg, hsl(265 80% 72%), hsl(38 85% 65%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(38 85% 72%), hsl(38 85% 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ─── SECTION VARIANTS ─── */
+  .section-dark {
+    background-color: hsl(var(--background));
+  }
+
+  .section-light {
+    background-color: hsl(var(--section-light));
+    color: hsl(var(--section-light-text));
+  }
+
+  .section-mid {
+    background-color: hsl(232 40% 11%);
+  }
+
+  /* ─── HOVER EFFECTS ─── */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1.5;
+  }
+
+  /* ─── NAV ─── */
+  .nav-blur {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: hsl(232 40% 8% / 0.7);
+    border-bottom: 1px solid hsl(232 30% 22% / 0.5);
+  }
+
+  /* ─── DARLING DIVIDER ─── */
+  .divider-ornament::before {
+    content: '✦';
+    color: hsl(var(--accent));
+    font-size: 1rem;
+  }
+
+  /* ─── MARQUEE ─── */
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee 28s linear infinite;
+  }
+
+  /* ─── WORD REVEAL (Darling-style) ─── */
+  .word-mask {
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  /* ─── PARALLAX BG ─── */
+  .parallax-bg {
+    will-change: transform;
+  }
+
+  /* ─── CARD BORDER GLOW ─── */
+  .card-glow {
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .card-glow:hover {
+    box-shadow: 0 0 40px -10px hsl(265 80% 60% / 0.3);
+    border-color: hsl(265 80% 60% / 0.4);
+  }
+
+  /* ─── ACCORDION ─── */
+  .accordion-trigger-darling {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  /* ─── LINE DRAW ANIMATION ─── */
+  @keyframes line-draw {
+    from { width: 0; }
+    to { width: 100%; }
   }
 }

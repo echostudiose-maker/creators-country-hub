@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import bahHero from "@/assets/bah-hero.jpg";
+import bahHorse from "@/assets/bah-horse.png";
 
 const stats = [
   { number: "6+", label: "Anos no Mercado" },
@@ -25,7 +25,7 @@ const AuthoritySection = () => (
           <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden mx-auto md:mx-0 border-2 border-primary/30 mb-6"
             style={{ boxShadow: "0 0 60px -15px hsl(265 80% 60% / 0.4)" }}
           >
-            <img src={bahHero} alt="Bah Storani" className="w-full h-full object-cover" />
+            <img src={bahHorse} alt="Bah Storani" className="w-full h-full object-cover" />
           </div>
           <h2 className="font-display font-bold text-2xl text-foreground mb-1">Bah Storani</h2>
           <p className="label-caps text-accent">Fundadora do MCC</p>

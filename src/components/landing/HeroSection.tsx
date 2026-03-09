@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import heroBg from "@/assets/hero-bg.jpg";
-import bahHero from "@/assets/bah-hero.jpg";
+import bahHeroReal from "@/assets/bah-hero-real.png";
 
 const CTA_URL = "https://hotm.art/7GmUn4q";
 
@@ -66,7 +66,7 @@ const HeroSection = () => {
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
       >
         <img
-          src={bahHero}
+          src={bahHeroReal}
           alt="Bah Storani"
           className="w-full h-full object-cover object-top"
           style={{ maskImage: "linear-gradient(to left, rgba(0,0,0,0.85) 60%, transparent 100%), linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 30%)", WebkitMaskImage: "linear-gradient(to left, rgba(0,0,0,0.85) 60%, transparent 100%), linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 30%)", maskComposite: "intersect", WebkitMaskComposite: "source-in" }}

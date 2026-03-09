@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import bahEvent from "@/assets/bah-event.png";
+import bahCasual from "@/assets/bah-casual.png";
 
 const StorySection = () => (
   <section className="section-light py-20 md:py-32 overflow-hidden">
@@ -13,9 +15,9 @@ const StorySection = () => (
         A história por trás do método
       </motion.p>
 
-      {/* ── Two-column layout ── */}
-      <div className="grid md:grid-cols-[1fr_1.1fr] gap-12 md:gap-20 items-start">
-        {/* Left: big editorial headline */}
+      {/* ── Two-column layout: headline + narrative ── */}
+      <div className="grid md:grid-cols-[1fr_1.1fr] gap-12 md:gap-20 items-start mb-16 md:mb-20">
+        {/* Left: big editorial headline + photo */}
         <div>
           <motion.h2
             className="headline-editorial text-[clamp(2.5rem,5.5vw,4.5rem)] text-section-light-text leading-[0.92]"
@@ -39,6 +41,21 @@ const StorySection = () => (
             transition={{ duration: 0.8, delay: 0.3 }}
             style={{ originX: 0 }}
           />
+
+          {/* Photo below headline */}
+          <motion.div
+            className="mt-8 rounded-xl overflow-hidden aspect-[4/5]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
+          >
+            <img
+              src={bahCasual}
+              alt="Bah Storani num evento country"
+              className="w-full h-full object-cover object-top"
+            />
+          </motion.div>
         </div>
 
         {/* Right: narrative */}
@@ -69,9 +86,24 @@ const StorySection = () => (
           <p className="font-body text-[1.05rem] text-section-light-text/75">
             Em 90 dias, eu cresci mais de{" "}
             <strong className="font-display italic text-primary font-bold">90 mil seguidores</strong>.
-            {" "}Cobrei os maiores eventos country do Brasil e multipliquei o meu faturamento em{" "}
+            {" "}Cobri os maiores eventos country do Brasil e multipliquei o meu faturamento em{" "}
             <strong className="font-display italic text-primary font-bold">5x</strong>.
           </p>
+
+          {/* Event photo inline */}
+          <motion.div
+            className="rounded-xl overflow-hidden aspect-[4/3]"
+            initial={{ opacity: 0, scale: 0.97 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <img
+              src={bahEvent}
+              alt="Bah Storani cobrindo evento country"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
 
           <p className="font-body text-[1.1rem] text-section-light-text font-semibold">
             E agora você vai ter acesso ao MCC que levei meses para desenvolver.

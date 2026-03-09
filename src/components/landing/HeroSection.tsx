@@ -85,7 +85,7 @@ const HeroSection = () => {
               <img
                 src={bahStoryClean}
                 alt="Bah Storani — Instagram Story"
-                className="absolute inset-0 w-full h-[103%] object-cover object-top"
+                className="absolute inset-0 w-full h-[106%] object-cover object-top translate-y-[2%]"
                 loading="eager"
               />
             </div>

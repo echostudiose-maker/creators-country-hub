@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Instagram, Linkedin, Facebook } from "lucide-react";
 import bahHeroCropped from "@/assets/bah-hero-cropped.png";
-import bahStory from "@/assets/bah-story.png";
+import bahStoryClean from "@/assets/bah-story-clean.png";
 
 const HeroSection = () => {
   return (
@@ -105,9 +105,9 @@ const HeroSection = () => {
 
               {/* Story Image */}
               <img
-                src={bahStory}
+                src={bahStoryClean}
                 alt="Bah Storani"
-                className="absolute inset-0 w-full h-full object-cover object-center"
+                className="absolute inset-0 w-full h-full object-cover object-top"
                 loading="eager"
               />
             </div>

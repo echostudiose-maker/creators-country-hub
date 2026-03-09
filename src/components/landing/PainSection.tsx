@@ -26,7 +26,7 @@ const container = {
 
 const item = {
   hidden: { opacity: 0, x: -40 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] } },
+  show: { opacity: 1, x: 0, transition: { duration: 0.65, ease: "easeOut" } },
 };
 
 const PainSection = () => (

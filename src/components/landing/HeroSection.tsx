@@ -103,7 +103,7 @@ const HeroSection = () => {
             <span className="block overflow-hidden">
               <WordReveal text="qualificados" delay={0.7} />
             </span>
-            <span className="block overflow-hidden headline-serif-italic text-[clamp(2rem,6vw,5.5rem)] text-accent/90">
+            <span className="block overflow-hidden headline-serif-italic text-[clamp(1.6rem,4vw,3.5rem)] text-accent/90">
               <WordReveal text="por mês." delay={0.9} />
             </span>
           </h1>

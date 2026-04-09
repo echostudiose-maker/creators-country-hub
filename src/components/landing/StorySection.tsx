@@ -3,7 +3,7 @@ import bahEvent from "@/assets/bah-event.png";
 import bahCasual from "@/assets/bah-casual.png";
 
 const StorySection = () => (
-  <section className="bg-background py-16 md:py-28 border-t border-border/40 overflow-hidden">
+  <section className="bg-background py-16 md:py-28 overflow-hidden">
     <div className="max-w-6xl mx-auto px-6 md:px-10">
       <motion.p className="label-caps text-muted-foreground mb-4" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
         Nossa missão

@@ -8,7 +8,7 @@ const audiences = [
 ];
 
 const AudienceSection = () => (
-  <section className="section-light py-16 md:py-24 border-t border-section-light-text/10">
+  <section className="section-light py-16 md:py-24">
     <div className="max-w-6xl mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-10 md:gap-20">
       <div>
         <p className="label-caps text-section-light-text/45 mb-4">Para quem é</p>

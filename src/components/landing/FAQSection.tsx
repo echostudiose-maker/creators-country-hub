@@ -11,7 +11,7 @@ const faqs = [
 ];
 
 const FAQSection = () => (
-  <section id="faq" className="section-light py-16 md:py-24 border-t border-section-light-text/10">
+  <section id="faq" className="section-light py-16 md:py-24">
     <div className="max-w-3xl mx-auto px-6 md:px-10">
       <p className="label-caps text-section-light-text/45 text-center mb-4">FAQ</p>
       <h2 className="font-body font-semibold text-[clamp(2rem,6vw,4rem)] text-section-light-text text-center leading-[0.95] mb-10">

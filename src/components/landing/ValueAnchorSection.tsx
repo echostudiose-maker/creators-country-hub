@@ -9,7 +9,7 @@ const items = [
 ];
 
 const ValueAnchorSection = () => (
-  <section className="bg-background py-16 md:py-24 border-t border-border/40">
+  <section className="bg-background py-16 md:py-24">
     <div className="max-w-3xl mx-auto px-6 md:px-10">
       <p className="label-caps text-muted-foreground text-center mb-4">Comparativo</p>
       <h2 className="font-body font-semibold text-[clamp(1.9rem,6vw,4rem)] text-foreground text-center leading-[0.95] mb-10">

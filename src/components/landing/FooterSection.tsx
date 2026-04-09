@@ -1,5 +1,5 @@
 const FooterSection = () => (
-  <footer className="bg-section-light py-12 border-t border-section-light-text/10">
+  <footer className="bg-section-light py-12">
     <div className="max-w-6xl mx-auto px-6 md:px-10">
       <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-10">
         <div className="flex items-center gap-2 font-body font-semibold text-xl text-section-light-text">
@@ -14,7 +14,7 @@ const FooterSection = () => (
         </div>
       </div>
 
-      <div className="border-t border-section-light-text/10 pt-6 text-center md:flex md:justify-between md:text-left">
+      <div className="pt-6 text-center md:flex md:justify-between md:text-left">
         <p className="text-xs text-section-light-text/40">© {new Date().getFullYear()} Bah Storani — Creators Country.</p>
         <p className="text-xs text-section-light-text/30 mt-1 md:mt-0">Todos os direitos reservados.</p>
       </div>

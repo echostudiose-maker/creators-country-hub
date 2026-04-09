@@ -18,7 +18,7 @@ const item: Variants = {
 };
 
 const PainSection = () => (
-  <section className="section-light py-16 md:py-24 border-t border-section-light-text/10">
+  <section className="section-light py-16 md:py-24">
     <div className="max-w-6xl mx-auto px-6 md:px-10 grid md:grid-cols-[1fr_1.1fr] gap-10 md:gap-20">
       <div>
         <p className="label-caps text-section-light-text/50 mb-4">Diagnóstico</p>

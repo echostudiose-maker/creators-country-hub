@@ -11,7 +11,7 @@ const pillars = [
 ];
 
 const SolutionSection = () => (
-  <section id="solution" className="section-light py-16 md:py-24 border-t border-section-light-text/10">
+  <section id="solution" className="section-light py-16 md:py-24">
     <div className="max-w-6xl mx-auto px-6 md:px-10">
       <motion.p className="label-caps text-section-light-text/45 mb-4" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
         Services
